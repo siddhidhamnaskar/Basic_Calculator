@@ -38,6 +38,23 @@ function App() {
     setWaitingForOperand(false);
   };
 
+  const backSpace = () => {
+    if(waitingForOperand) return;
+    if(display.length === 1){
+      setDisplay('0');
+      
+      setExpression(expression.slice(0, -1));
+    }
+    if(expression.length === 1){
+      setExpression('');
+      
+    }
+    else{
+      setDisplay(display.slice(0, -1));
+      setExpression(expression.slice(0, -1));
+    } 
+  }
+
   const performOperation = (nextOperation) => {
     const inputValue = parseFloat(display);
 
@@ -90,23 +107,33 @@ function App() {
       <div className="expression">{expression}</div>
       <div className="display">{display}</div>
       <div className="buttons">
+         <button onClick={clear} className="clear">AC</button>
+         <button style={{visibility:'hidden'}}></button>
+         <button style={{visibility:"hidden"}}></button>
+        
+        
+         <button onClick={() => performOperation('/')}>/</button>
         <button onClick={() => inputDigit(7)}>7</button>
         <button onClick={() => inputDigit(8)}>8</button>
         <button onClick={() => inputDigit(9)}>9</button>
-        <button onClick={() => performOperation('/')}>/</button>
+         <button onClick={() => performOperation('*')}>*</button>
         <button onClick={() => inputDigit(4)}>4</button>
         <button onClick={() => inputDigit(5)}>5</button>
         <button onClick={() => inputDigit(6)}>6</button>
-        <button onClick={() => performOperation('*')}>*</button>
+        <button onClick={() => performOperation('-')}>-</button>
         <button onClick={() => inputDigit(1)}>1</button>
         <button onClick={() => inputDigit(2)}>2</button>
         <button onClick={() => inputDigit(3)}>3</button>
-        <button onClick={() => performOperation('-')}>-</button>
+         <button onClick={() => performOperation('+')}>+</button>
+        
         <button onClick={() => inputDigit(0)}>0</button>
-        <button onClick={inputDecimal}>.</button>
-        <button onClick={handleEquals}>=</button>
-        <button onClick={() => performOperation('+')}>+</button>
-        <button onClick={clear} className="clear">C</button>
+         <button onClick={inputDecimal}>.</button>
+         <button onClick={backSpace}>⌫</button>
+         <button onClick={handleEquals}>=</button>
+        
+       
+        
+        
       </div>
     </div>
   );
