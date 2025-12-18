@@ -8,6 +8,34 @@
   font-family: 'Arial', sans-serif;
 }
 
+@media (min-width: 768px) {
+  .calculator {
+    width: 600px;
+  }
+
+  .expression {
+    font-size: 2.4em;
+    padding: 20px 40px;
+    min-height: 60px;
+  }
+
+  .display {
+    font-size: 4em;
+    padding: 40px;
+    min-height: 120px;
+  }
+
+  .buttons {
+    gap: 20px;
+    padding: 40px;
+  }
+
+  button {
+    height: 120px;
+    font-size: 3em;
+  }
+}
+
 .expression {
   background-color: #333;
   color: #ccc;

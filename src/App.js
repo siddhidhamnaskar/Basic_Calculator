@@ -78,7 +78,7 @@ function App() {
     if (previousValue !== null && operation) {
       const newValue = calculate(previousValue, inputValue, operation);
       setDisplay(String(newValue));
-      setExpression(expression + '=' + String(newValue));
+      setExpression(expression  + '=' + String(newValue));
       setPreviousValue(null);
       setOperation(null);
       setWaitingForOperand(true);

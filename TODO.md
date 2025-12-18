@@ -4,3 +4,4 @@
 - [x] Update src/App.js to implement calculator component with display, buttons, and logic
 - [x] Update src/App.css to style the calculator UI
 - [x] Run the app to test calculator functionality
+- [x] Make calculator responsive: 300px width for mobile, 600px for laptop
