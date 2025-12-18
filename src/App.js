@@ -40,13 +40,15 @@ function App() {
 
   const backSpace = () => {
     if(waitingForOperand) return;
+    if(display === '0') return;
+    console.log(display.length);
     if(display.length === 1){
       setDisplay('0');
       
       setExpression(expression.slice(0, -1));
     }
     if(expression.length === 1){
-      setExpression('');
+      clear();
       
     }
     else{
